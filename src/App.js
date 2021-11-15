@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef } from 'react';
+import JoditEditor from "jodit-react";
 
-function App() {
+const App = () => {
+  const editor = useRef(null)
+  const [content, setContent] = useState('')
+
+  const config = {
+    "spellcheck": false,
+    "autofocus": true,
+    "language": "ru",
+    "toolbarButtonSize": "large",
+    "enter": "P",
+    "defaultMode": "1",
+    "toolbarSticky": false,
+    "minHeight": 200,
+    allowResizeY: true,
+    "toolbarInlineForSelection": true,
+    "showPlaceholder": true,
+    "buttons": "bold,italic,underline,strikethrough,ul,ol,outdent,indent,left,font,fontsize,paragraph,brush,image,hr,table,link,symbol"
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <JoditEditor
+        ref={editor}
+        value={content}
+        config={config}
+        tabIndex={5} // tabIndex of textarea
+        onBlur={newContent => { setContent(newContent) }}
+      />
+      <div>
+        {content}
+      </div>
+    </>
   );
 }
 
-export default App;
+export default App
