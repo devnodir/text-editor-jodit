@@ -1,20 +1,16 @@
-:root {
-     --jd-color-icon: #bd10e0;
-}
-
 .jodit-status-bar {
      background-color: #ffffff !important;
      display: none !important;
 }
 .jodit-toolbar__box:not(:empty) {
-     background-color: #ffffff;
+     background-color: #ffffff !important;
 }
 .jodit-container:not(.jodit_inline) {
-     border-radius: 10px;
-     border: 1px solid #dadada;
-     overflow: hidden;
+     border-radius: 10px !important;
+     border: 1px solid #dadada !important;
+     overflow: hidden !important;
 }
 .jodit-icon {
-     stroke: #333;
-     fill: #333;
+     stroke: #333 !important;
+     fill: #333 !important;
 }
