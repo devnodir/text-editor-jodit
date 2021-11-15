@@ -4,7 +4,7 @@
 
 .jodit-status-bar {
      background-color: #ffffff !important;
-     display: none;
+     display: none !important;
 }
 .jodit-toolbar__box:not(:empty) {
      background-color: #ffffff;
